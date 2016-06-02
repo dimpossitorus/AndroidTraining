@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Lucky Strike</string>
+    <string name="appTitle">Random Guess</string>
+    <string name="number">1</string>
+    <string name="restart">Play Again</string>
+    <string name="inputHint">Input number here</string>
+    <string name="submit">Submit</string>
 </resources>
