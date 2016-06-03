@@ -1,3 +1,23 @@
 <resources>
     <string name="app_name">Mad Lib</string>
+    <string name="description">
+        Welcome to MadLibs. I will ask you to fill in the words to complete a story.
+        You won\'t be able to see the whole story until you are done filling in all the missing words.
+        That\'s part of the fun.
+        Click the button below to start the game!
+    </string>
+    <string name="start">Start</string>
+    <string name="instruction">Fill in the words to complete the story!</string>
+    <string name="remain">0 word remaining</string>
+    <string name="ok">OK</string>
+    <string name="hint">Your answer here</string>
+    <string name="type">Please type a word</string>
+    <string name="madlib">Your MadLib Story!</string>
+    <string name="story">The story goes here.</string>
+    <string name="newstory">Make Another Story</string>
+    <string name="nextstory">Load Next Story</string>
+    <string name="dialogtitle">Load Next Story?</string>
+    <string name="yes">Load</string>
+    <string name="no">Cancel</string>
+    <string name="labelinput">Input</string>
 </resources>
