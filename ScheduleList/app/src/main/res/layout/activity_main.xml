@@ -11,19 +11,25 @@
 
     <TextView
         android:id="@+id/appName"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:text="@string/app_name" />
 
     <TextView
         android:id="@+id/instruction"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/instruction"/>
+        android:text="@string/instruction"
+        android:layout_below="@+id/appName"
+        android:layout_alignParentStart="true"
+        android:gravity="center"/>
 
     <ListView
+        android:id="@+id/scheduleList"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/instruction">
     </ListView>
 
     <RelativeLayout
@@ -36,20 +42,24 @@
             android:id="@+id/inputLayout"
             android:layout_width="wrap_content"
             android:layout_height="72dp"
-            >
+            android:layout_alignParentStart="true"
+            android:layout_toStartOf="@+id/submitTask">
 
             <EditText
+                android:id="@+id/inputTask"
                 android:layout_width="match_parent"
                 android:layout_height="72dp"
-                android:hint="@string/taskhint"/>
+                android:hint="@string/taskhint"
+                android:textSize="16sp"/>
 
-            </android.support.design.widget.TextInputLayout>
+        </android.support.design.widget.TextInputLayout>
 
         <Button
             android:id="@+id/submitTask"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true" />
+            android:layout_height="36dp"
+            android:layout_alignParentEnd="true"
+            android:text="@string/add"/>
     </RelativeLayout>
 
 
