@@ -1,7 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<TextView android:id="@+id/task"
+<RelativeLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:text="@string/task"
-    xmlns:android="http://schemas.android.com/apk/res/android" />
+    android:paddingTop="16dp"
+    android:paddingLeft="8dp"
+    android:paddingRight="8dp">
+
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:scaleType="centerInside"
+        android:src="@mipmap/ic_launcher"
+        android:id="@+id/imageView" />
+
+
+    <TextView
+        android:id="@+id/taskTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/task"
+        android:textSize="20sp"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/imageView"
+        android:paddingBottom="8dp"
+        android:textColor="#FF3F51B5"/>
+
+    <TextView android:id="@+id/description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/description"
+        android:layout_below="@+id/taskTitle"
+        android:layout_toEndOf="@+id/imageView" />
+
+</RelativeLayout>

@@ -3,5 +3,7 @@
     <string name="instruction">Long press an item to remove it</string>
     <string name="taskhint">New Task</string>
     <string name="add">Add</string>
-    <string name="task">This is task</string>
+    <string name="task">This is task Title</string>
+    <string name="description">This is description</string>
+    <string name="deschint">Task Description</string>
 </resources>

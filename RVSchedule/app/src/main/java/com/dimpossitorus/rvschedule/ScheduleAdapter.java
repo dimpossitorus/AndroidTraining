@@ -16,20 +16,23 @@ import java.util.Vector;
  */
 public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.ViewHolder> {
 
-    Vector<String> schedule;
+    Vector<Schedule> schedule;
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        public TextView textView;
+        public TextView title;
+        public TextView description;
 
-        public ViewHolder(TextView itemView) {
+        public ViewHolder(View itemView) {
             super(itemView);
-            textView = itemView;
+            title = (TextView) itemView.findViewById(R.id.taskTitle);
+            description = (TextView) itemView.findViewById(R.id.description);
+
             Log.d("DEBUG", "ViewHolder Constructor");
         }
     }
 
-    public ScheduleAdapter (Vector<String> _schedule) {
-        schedule = (Vector<String>) _schedule.clone();
+    public ScheduleAdapter (Vector<Schedule> _schedule) {
+        schedule = (Vector<Schedule>) _schedule.clone();
         Log.d("DEBUG", "ScheduleAdapter Constructor");
         Log.d("DEBUG", schedule.toString());
     }
@@ -37,8 +40,7 @@ public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.ViewHo
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Log.d("DEBUG", "Entering onCreateViewHolder");
-        TextView view = (TextView) LayoutInflater.from(parent.getContext()).inflate(R.layout.rv_layout, parent, false);
-        //view.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT));
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.rv_layout, parent, false);
         ViewHolder viewHolder = new ViewHolder(view);
         Log.d("DEBUG", "onCreateViewHolder");
         return viewHolder;
@@ -47,7 +49,8 @@ public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.ViewHo
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         Log.d("DEBUG", "onBindViewHolder");
-        holder.textView.setText(schedule.get(position));
+        holder.title.setText(schedule.get(position).getTitle());
+        holder.description.setText(schedule.get(position).getDescription());
     }
 
     @Override
