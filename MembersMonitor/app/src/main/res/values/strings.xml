@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Members Monitor</string>
+    <string name="now">Member now : 0</string>
+    <string name="all">Member ever registered : 0</string>
+    <string name="add">Add member</string>
+    <string name="delete">Delete member</string>
 </resources>
