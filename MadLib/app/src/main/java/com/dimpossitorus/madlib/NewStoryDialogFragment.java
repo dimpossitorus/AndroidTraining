@@ -32,7 +32,13 @@ public class NewStoryDialogFragment extends DialogFragment {
         super.onAttach(activity);
 
         try {
-            mListener = (NewStoryDialogListener) activity;
+            // If the DialogFragment is called from an activity
+            // then the Interface must be instantiate by casting the Activity
+            //mListener = (NewStoryDialogListener) activity;
+
+            // If the DialogFragment is called from a fragment
+            // then the Interface must be instantiate by using getTargetFragment
+            mListener = (NewStoryDialogListener) getTargetFragment();
             Log.d("DEBUG", "Attach Successful");
         }
         catch (ClassCastException e) {

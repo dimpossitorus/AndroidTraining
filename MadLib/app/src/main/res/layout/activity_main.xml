@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainActivity"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
@@ -11,6 +12,26 @@
     android:orientation="vertical"
     android:transitionGroup="true">
 
+    <!-- WelcomeFragment
+    <fragment
+        android:id="@+id/welcomeFragment"
+        android:name="com.dimpossitorus.madlib.WelcomeFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout="@layout/fragment_welcome" />
+    -->
+
+    <!-- SubmitFragment
+    <fragment
+        android:id="@+id/submitFragment"
+        android:name="com.dimpossitorus.madlib.SubmitFragment"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        tools:layout="@layout/fragment_submit" />
+    -->
+    <!--StoryFragment -->
+
+    <!--
     <ImageView
         android:id="@+id/welcome_header"
         android:layout_width="match_parent"
@@ -48,4 +69,6 @@
         android:layout_alignEnd="@+id/description"
         android:layout_marginEnd="16dp"
         android:minWidth="64dp" />
+
+        -->
 </RelativeLayout>

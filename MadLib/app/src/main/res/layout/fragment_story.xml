@@ -1,0 +1,44 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.dimpossitorus.madlib.StoryFragment">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.dimpossitorus.madlib.StoryActivity">
+
+        <TextView
+            android:id="@+id/madlibTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/madlib"
+            android:textSize="12pt"
+            android:textAlignment="center"/>
+
+        <TextView
+            android:id="@+id/story"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/madlibTitle"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="30dp"
+            android:text="@string/story"/>
+
+        <Button
+            android:id="@+id/newStory"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:text="@string/newstory"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:textColor="#FFFFFFFF"
+            android:background="@drawable/shape"
+            android:minWidth="64dp" />
+
+    </RelativeLayout>
+
+
+</FrameLayout>
