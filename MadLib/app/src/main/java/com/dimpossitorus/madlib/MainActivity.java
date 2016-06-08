@@ -1,13 +1,19 @@
 package com.dimpossitorus.madlib;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements WelcomeFragment.OnWelcomeFragmentInteractionListener, SubmitFragment.OnSubmitFragmentInteractionListener {
@@ -17,6 +23,14 @@ public class MainActivity extends AppCompatActivity implements WelcomeFragment.O
     private Fragment storyFragment;
     FragmentManager fragmentManager;
     FragmentTransaction fragmentTransaction;
+
+    //Navigation Drawer Component
+    private ListView mDrawerList;
+    private ArrayAdapter<String> adapter;
+    private ActionBarDrawerToggle mDrawerToggle;
+    private DrawerLayout drawerLayout;
+    private String activityTitle;
+
 
 
     @Override
@@ -53,12 +67,58 @@ public class MainActivity extends AppCompatActivity implements WelcomeFragment.O
             }
         });
         */
+
+        //Part to set up the navigation drawer
+        mDrawerList = (ListView) findViewById(R.id.drawerList);
+        String[] osArray = { "Story 1", "Story 2", "Story 3", "Story 4", "Story 5" };
+        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, osArray);
+        mDrawerList.setAdapter(adapter);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeButtonEnabled(true);
+
+        drawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
+        activityTitle = getTitle().toString();
+
+        mDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.drawer_open, R.string.drawer_close) {
+            @Override
+            public void onDrawerOpened (View drawerView) {
+                super.onDrawerOpened(drawerView);
+                getSupportActionBar().setTitle("Navigation!");
+                invalidateOptionsMenu();
+            }
+
+            @Override
+            public void onDrawerClosed(View drawerView) {
+                super.onDrawerClosed(drawerView);
+                getSupportActionBar().setTitle(activityTitle);
+                invalidateOptionsMenu();
+            }
+
+        };
+        mDrawerToggle.setDrawerIndicatorEnabled(true);
+        drawerLayout.setDrawerListener(mDrawerToggle);
     }
 
     @Override
-    public void onResume() {
-        super.onResume();
+    public boolean onOptionsItemSelected(MenuItem item) {
 
+        if (mDrawerToggle.onOptionsItemSelected(item)) {
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onPostCreate(Bundle savedInstanceState) {
+        super.onPostCreate(savedInstanceState);
+        mDrawerToggle.syncState();
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration configuration) {
+        super.onConfigurationChanged(configuration);
+        mDrawerToggle.onConfigurationChanged(configuration);
     }
 
     //WelcomeFragment Callback

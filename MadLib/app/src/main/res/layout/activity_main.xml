@@ -1,74 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/mainActivity"
+    android:id="@+id/drawerLayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.dimpossitorus.madlib.MainActivity"
-    android:orientation="vertical"
-    android:transitionGroup="true">
+    android:layout_height="match_parent">
 
-    <!-- WelcomeFragment
-    <fragment
-        android:id="@+id/welcomeFragment"
-        android:name="com.dimpossitorus.madlib.WelcomeFragment"
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/mainActivity"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:layout="@layout/fragment_welcome" />
-    -->
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        tools:context="com.dimpossitorus.madlib.MainActivity"
+        android:orientation="vertical"
+        android:transitionGroup="true">
 
-    <!-- SubmitFragment
-    <fragment
-        android:id="@+id/submitFragment"
-        android:name="com.dimpossitorus.madlib.SubmitFragment"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        tools:layout="@layout/fragment_submit" />
-    -->
-    <!--StoryFragment -->
-
-    <!--
-    <ImageView
-        android:id="@+id/welcome_header"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:src="@drawable/welcome_header"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
-
-    <TextView
-        android:id="@+id/description"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/description"
-        android:layout_marginTop="40dp"
-        android:layout_below="@+id/welcome_header"
-        android:layout_alignParentStart="true"
-        android:textSize="14sp" />
-
-    <Button
-        android:id="@+id/startButton"
-        android:layout_width="wrap_content"
-        android:layout_height="36dp"
-        android:layout_gravity="center"
-        android:text="@string/start"
-        android:layout_marginBottom="16dp"
-        android:paddingLeft="16dp"
-        android:paddingRight="16dp"
-        android:clickable="true"
-        android:elegantTextHeight="true"
-        android:textColor="#f5f5f5"
-        android:background="@drawable/shape"
-        android:singleLine="false"
-        android:textSize="14sp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignEnd="@+id/description"
-        android:layout_marginEnd="16dp"
-        android:minWidth="64dp" />
-
+        <!-- WelcomeFragment
+        <fragment
+            android:id="@+id/welcomeFragment"
+            android:name="com.dimpossitorus.madlib.WelcomeFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:layout="@layout/fragment_welcome" />
         -->
-</RelativeLayout>
+
+        <!-- SubmitFragment
+        <fragment
+            android:id="@+id/submitFragment"
+            android:name="com.dimpossitorus.madlib.SubmitFragment"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            tools:layout="@layout/fragment_submit" />
+        -->
+        <!--StoryFragment -->
+
+        <!--
+        <ImageView
+            android:id="@+id/welcome_header"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:src="@drawable/welcome_header"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/description"
+            android:layout_marginTop="40dp"
+            android:layout_below="@+id/welcome_header"
+            android:layout_alignParentStart="true"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/startButton"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:layout_gravity="center"
+            android:text="@string/start"
+            android:layout_marginBottom="16dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:clickable="true"
+            android:elegantTextHeight="true"
+            android:textColor="#f5f5f5"
+            android:background="@drawable/shape"
+            android:singleLine="false"
+            android:textSize="14sp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignEnd="@+id/description"
+            android:layout_marginEnd="16dp"
+            android:minWidth="64dp" />
+
+            -->
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/drawerList"
+        android:layout_width="200dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="left|start"
+        android:background="#ffeeeeee"/>
+
+</android.support.v4.widget.DrawerLayout>
