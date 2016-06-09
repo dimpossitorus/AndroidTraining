@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity implements WelcomeFragment.O
 
     //Navigation Drawer Component
     private ListView mDrawerList;
-    private ArrayAdapter<String> adapter;
+    private DrawerListAdapter adapter;
     private ActionBarDrawerToggle mDrawerToggle;
     private DrawerLayout drawerLayout;
     private String activityTitle;
@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity implements WelcomeFragment.O
         //Part to set up the navigation drawer
         mDrawerList = (ListView) findViewById(R.id.drawerList);
         String[] osArray = { "Story 1", "Story 2", "Story 3", "Story 4", "Story 5" };
-        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, osArray);
+        adapter = new DrawerListAdapter(this, osArray);
         mDrawerList.setAdapter(adapter);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
